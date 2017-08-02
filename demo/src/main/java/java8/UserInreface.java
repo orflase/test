@@ -6,6 +6,7 @@ package java8;
  * @date 2017年7月31日 下午4:56:30 
  * @since
  */
+@FunctionalInterface
 public interface UserInreface<T> {
 
 	public boolean test(T t);

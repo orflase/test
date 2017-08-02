@@ -12,7 +12,7 @@ import org.junit.Test;
  * @date 2017年7月31日 下午4:52:33 
  * @since
  */
-public class Lamdba {
+public class Lambda {
 	List<User> list = Arrays.asList(
 			new User("张无忌","男",24),
 			new User("谢逊","男",55),
@@ -72,4 +72,5 @@ public class Lamdba {
 		.map(User::getName)
 		.forEach(System.out::println);
 	}
+	
 }
