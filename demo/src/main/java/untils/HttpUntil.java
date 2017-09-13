@@ -128,4 +128,8 @@ public class HttpUntil {
 		}
 		return result;
 	}
+	
+	public static void main(String[] args) {
+		sendPost("http://192.168.1.234:8088/app/user/login.html", "content=ewogICAgImhlYWRlciI6ewogICAgICAgICJvcmdDb2RlIjoic2hzaGFuc2hhbmNoZTAxIiwKICAgICAgICAidHJhbnNEYXRlIjoiMjAxNi0xMS0wNyAxNToyODozMCIsCiAgICAgICAgInRyYW5zTm8iOiJ0cmFuczIwMTYxMTE2MDAwMSIKICAgIH0sCiAgICAiYnVzaURhdGEiOnsKICAgICAgICAiYmF0Y2hObyI6IjExMjEyMSIsCiAgICAgICAgInBob25lIjoiMTU1MzgxMDM5MTAiCiAgICB9LAogICAgInNlY3VyaXR5SW5mbyI6ewogICAgICAgICJzaWduIjoiRTA1OEEwOUM0N0ExQkI1M0Y1REUxNUFBODJERERCMEMiCiAgICB9Cn0=");
+	}
 }
