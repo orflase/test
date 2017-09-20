@@ -12,7 +12,7 @@ import org.junit.Test;
  * @date 2017年8月16日 下午2:23:40 
  * @since
  */
-public class StreamDemo {
+public class Stream1 {
 
 	/**
 	 * 流Stream是什么？
@@ -36,20 +36,21 @@ public class StreamDemo {
 	public void test(){
 		//1、通过Collection系列提供的stream()（串行） 或parallelStream()（并行）获取
 		List<String> list = new ArrayList<>();
-		Stream<String> stream = list.stream();
+		Stream<String> stream1 = list.stream();//串行流
+		Stream<String> stream2 = list.parallelStream();//并行流
 		
 		//2、通过Arrays中的静态方法stream() 获取数据流
 		User[] u = new User[2];
-		Stream<User> stream1 = Arrays.stream(u);
+		Stream<User> stream3 = Arrays.stream(u);
 		
 		//3、通过Stream；类中的静态方法of()
-		Stream<String> stream2 = Stream.of("11","2");
+		Stream<String> stream4 = Stream.of("11","2");
 		
 		//4、创建无限流
 		//迭代
-		Stream<Integer> stream3 = Stream.iterate(0, (x) -> x+2);
-//		stream3.limit(10)
-//		.forEach(System.out::println);
+		Stream<Integer> stream5 = Stream.iterate(0, (x) -> x+2);
+		stream5.limit(10)
+		.forEach(System.out::println);
 		//生成
 		Stream.generate(() -> Math.random()).limit(10)
 		.forEach(System.out::println);

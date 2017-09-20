@@ -3,6 +3,7 @@ package java8;
 import java.util.Comparator;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 import org.junit.Test;
@@ -90,21 +91,42 @@ public class TestMethodRef {
 
 	/**
 	 *  类::实例方法名
+	 *  若lambda参数列表中的第一参数是实例方法的调用者，而第二个参数是实例方法参数时，可以使用ClassName::method
 	 * @author: 李林林
 	 * @date:2017年8月15日 下午7:48:24 void
 	 */
 	@Test
 	public void test4(){
-
+		
 		BiPredicate<String, String> bp = String::equals;
 		System.out.println(bp.test("1", "2"));	
 
 	}
-	
+	/**
+	 * 构造器引用
+	 * @author: 李林林
+	 * @date:2017年9月14日 下午4:33:23 void
+	 */
 	@Test
 	public void test5(){
+		
 		Supplier<User> sup = User::new;
 		User u = sup.get();
 		System.out.println(u.toString());
+	}
+	
+	/**
+	 * 数组引用
+	 * @author: 李林林
+	 * @date:2017年9月14日 下午4:45:58 void
+	 */
+	@Test
+	public void test6(){
+		Function<Integer, String[]> fn = (x) -> new String[x]; 
+		String[] str = fn.apply(10);
+		System.out.println(str.length);
+		Function<Integer, String[]> fn1 = String[]::new;
+		String[] str1 = fn1.apply(20);
+		System.out.println(str1.length);
 	}
 }
